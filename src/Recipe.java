@@ -1,14 +1,12 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Recipe <T extends Product> {
 
     private String nameRecipe;
-    private List <Product> recipe = new ArrayList<>();
+    private Set<Product> recipe = new HashSet<>();
     private double totalCost;
 
-    public Recipe(String nameRecipe, List<Product> recipe) {
+    public Recipe(String nameRecipe, Set<Product> recipe) {
         this.nameRecipe = nameRecipe;
         this.recipe = recipe;
         this.totalCost = calcTotalCost();
@@ -18,7 +16,7 @@ public class Recipe <T extends Product> {
         return nameRecipe;
     }
 
-    public List<Product> getRecipe() {
+    public Set<Product> getRecipe() {
         return recipe;
     }
 
@@ -27,8 +25,9 @@ public class Recipe <T extends Product> {
     }
 
     public double calcTotalCost () {
-        for (int i = 0; i < recipe.size(); i++) {
-            totalCost = totalCost + recipe.get(i).getPrice() * recipe.get(i).getWeight();
+        double totalCost = 0.0;
+        for (Product product : recipe) {
+            totalCost = totalCost + product.getPrice() * product.getWeight() ;
         } return totalCost;
             
         }

@@ -20,7 +20,7 @@ public class Main {
 
 
 //        System.out.println(Basket.basket.toString());
-        Basket.addProduct(banan2);
+//        Basket.addProduct(banan2);
 //        System.out.println(Basket.basket.toString());
         Basket.basket.remove(pineapple);
         orange.setBuy(true);
@@ -34,10 +34,10 @@ public class Main {
         salat3.add(orange);
 //_______________________Книга рецептов_____________________________________________________________
 
-        Recipe salat = new Recipe("Салатище", List.copyOf(Basket.basket));
-        Recipe salat10 = new Recipe<>("Салатик", List.copyOf(salat2));
-        Recipe salat11 = new Recipe<>("Другой салат", List.copyOf(salat3));
-        Recipe salat12 = new Recipe<>("Другой салат2", List.copyOf(salat2));
+        Recipe salat = new Recipe("Салатище", Set.copyOf(Basket.basket));
+        Recipe salat10 = new Recipe<>("Салатик", Set.copyOf(salat2));
+        Recipe salat11 = new Recipe<>("Другой салат", Set.copyOf(salat3));
+        Recipe salat12 = new Recipe<>("Другой салат2", Set.copyOf(salat2));
 //        System.out.println(salat);
 
         BookRecipe.getBookRecipe().add(salat);
